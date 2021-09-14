@@ -22,7 +22,6 @@ LIST_B = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c\
 OBJ = $(LIST:.c=.o)
 OBJ_B = $(LIST_B:.c=.o)
 
-OPTFLAGS = -O2
 FLAGS = -Wall -Wextra -Werror
 
 all : $(NAME)
@@ -31,7 +30,7 @@ $(NAME) : $(OBJ) $(HEADER)
 	ar rcs $(NAME) $?
 
 %.o : %.c $(HEADER)
-	gcc $(FLAGS) $(OPTFLAGS) -c $< -o $@
+	gcc $(FLAGS) -c $< -o $@
 
 bonus : 
 	@make OBJ="$(OBJ_B)" all
